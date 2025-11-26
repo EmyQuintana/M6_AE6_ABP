@@ -1,0 +1,28 @@
+{% extends 'gestion_productos/base.html' %}
+
+{% block title %}Iniciar Sesión{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white text-center">
+                <h4 class="mb-0">Acceso de Usuarios</h4>
+            </div>
+            <div class="card-body p-4">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    
+                    <div class="d-grid mt-4">
+                        <button type="submit" class="btn btn-primary">Ingresar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer text-center">
+                <small>¿No tienes cuenta? <a href="{% url 'registrar_usuario' %}">Regístrate aquí</a></small>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'gestion_productos/base.html' %}
+
+{% block title %}Registrar Usuario{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-header bg-success text-white text-center">
+                <h4 class="mb-0">Crear Nueva Cuenta</h4>
+            </div>
+            <div class="card-body p-4">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    
+                    <hr>
+                    
+                    <!-- Roles:-->
+                    <div class="mb-3">
+                        <label for="group" class="form-label fw-bold">Asignar Rol:</label>
+                        <select name="group" id="group" class="form-select">
+                            <option value="Gestores de Productos">Gestor de Productos (Ver, Crear, Editar)</option>
+                            <option value="Administradores">Administrador (Control Total + Eliminar)</option>
+                        </select>
+                        <div class="form-text text-muted">
+                            <small>Este rol definirá qué puede hacer el usuario en el sistema.</small>
+                        </div>
+                    </div>
+
+                    <div class="d-grid mt-4">
+                        <button type="submit" class="btn btn-success">Registrar Usuario</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
