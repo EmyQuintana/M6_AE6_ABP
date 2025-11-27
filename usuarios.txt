@@ -1,0 +1,6 @@
+Usuario: admin
+correo: e@gmail.com
+Contraseñas: admin1234
+
+Usuario: emily
+Contraseña: venezuela25 (rol gestor de usuario, no puede eliminar productos)

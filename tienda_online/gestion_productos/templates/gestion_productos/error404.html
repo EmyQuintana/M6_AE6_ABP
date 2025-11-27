@@ -6,15 +6,13 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8 text-center">
-            <!-- Tarjeta de error -->
             <div class="card border-warning shadow">
                 <div class="card-header bg-warning text-dark">
-                    <h2><i class="bi bi-question-octagon-fill"></i> Página no encontrada</h2>
+                    <h2 class="mb-0">Página no encontrada</h2>
                 </div>
                 <div class="card-body p-5">
                     <div class="mb-4">
-         
-                        <i class="bi bi-search text-warning mb-3" style="font-size: 5rem;"></i>
+                        <h1 class="display-1 fw-bold text-warning">404</h1>
                         <h3 class="text-warning mt-3">Lo sentimos, no pudimos encontrar lo que buscas</h3>
                     </div>
                     
@@ -23,7 +21,7 @@
                     </p>
                     
                     <div class="alert alert-light border text-start">
-                        <h5 class="alert-heading text-muted"><i class="bi bi-info-circle"></i> Posibles causas:</h5>
+                        <h5 class="alert-heading text-muted">Posibles causas:</h5>
                         <ul class="mb-0 text-muted">
                             <li>La dirección URL está mal escrita.</li>
                             <li>El enlace que seguiste es antiguo o está roto.</li>
@@ -33,11 +31,11 @@
                     
                     <div class="d-flex justify-content-center gap-3 mt-5">
                         <a href="{% url 'index' %}" class="btn btn-primary btn-lg">
-                            <i class="bi bi-house-door-fill"></i> Volver al Inicio
+                            Volver al Inicio
                         </a>
                         
                         <button onclick="history.back()" class="btn btn-outline-secondary btn-lg">
-                            <i class="bi bi-arrow-left"></i> Regresar
+                            Regresar
                         </button>
                     </div>
                     

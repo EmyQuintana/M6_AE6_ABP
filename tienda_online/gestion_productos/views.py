@@ -30,7 +30,7 @@ def registrar_usuario(request):
     else:
         form = UserCreationForm()
 
-    return render(request, 'gestion_productos/registrar_usuario.html', {'form': form})
+    return render(request, 'gestion_productos/registro_usuario.html', {'form': form})
 
 def login_usuario(request):
     if request.method == 'POST':
@@ -53,7 +53,7 @@ def logout_usuario(request):
 class AgregarProducto(LoginRequiredMixin, PermissionRequiredMixin, View):
     permission_required = 'gestion_productos.add_producto'
     form_class = ProductoForm
-    template_name = 'gestion_productos/crear_producto.html'
+    template_name = 'gestion_productos/agregar_producto.html'
     
     # Si no tiene permiso, redirige o lanza 403
     login_url = '/login/' 
@@ -115,9 +115,7 @@ class EliminarProducto(LoginRequiredMixin, PermissionRequiredMixin, View):
 # --- MANEJo DE ERRORES---
 
 def handler403(request, exception=None):
-    """Manejador personalizado para errores 403 (Permiso denegado)"""
-    return render(request, 'gestion_productos/403.html', status=403)
+    return render(request, 'gestion_productos/error403.html', status=403)
 
 def handler404(request, exception=None):
-    """Manejador personalizado para errores 404 (Página no encontrada)"""
-    return render(request, 'gestion_productos/404.html', status=404)
+    return render(request, 'gestion_productos/error404.html', status=404)

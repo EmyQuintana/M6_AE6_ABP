@@ -1,0 +1,36 @@
+{% extends 'gestion_productos/base.html' %}
+
+{% block title %}Eliminar Producto{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow border-danger">
+            <div class="card-header bg-danger text-white text-center">
+                <h4 class="mb-0">Confirmar Eliminación</h4>
+            </div>
+            <div class="card-body text-center p-4">
+                <p class="fs-5">¿Estás seguro de que deseas eliminar este producto?</p>
+                
+                <div class="alert alert-warning d-inline-block my-2">
+                    <h3 class="fw-bold m-0">{{ producto.nombre }}</h3>
+                </div>
+                
+                <p class="text-danger mt-3 fw-bold">Esta acción es permanente y no se puede deshacer.</p>
+
+                <form method="POST" class="mt-4">
+                    {% csrf_token %}
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="{% url 'listar_productos' %}" class="btn btn-secondary px-4">
+                            Cancelar
+                        </a>
+                        <button type="submit" class="btn btn-danger px-4">
+                            Sí, Eliminar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
